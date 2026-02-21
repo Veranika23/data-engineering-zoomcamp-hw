@@ -21,3 +21,5 @@ print(q5_result)
 # print(list(df.columns))
 
 #Question 6
+q6_result = duckdb.query("SELECT locDO.Zone as dropoff_zone, tip_amount  from 'green_tripdata_2025-11.parquet' trip left join 'taxi_zone_lookup.csv' locPU on trip.PUlocationID = locPU.LocationID left join 'taxi_zone_lookup.csv' locDO on trip.DOLocationID = locDO.LocationID where (DATE(lpep_pickup_datetime) >= '2025-11-01' and  DATE(lpep_pickup_datetime) < '2025-12-01') and locPU.Zone = 'East Harlem North' order by tip_amount desc limit 1")
+print(q6_result)
