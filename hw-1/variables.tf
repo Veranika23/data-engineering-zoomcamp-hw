@@ -2,7 +2,7 @@
 
 variable "project" {
   description = "Project"
-  default     = "DE Zoomcamp"
+  default     = "de-zoomcamp-488117"
 }
 
 variable "region" {
